@@ -1,0 +1,51 @@
+
+.eventForm {
+    margin: 10px;
+    display: inline-block;
+    width: auto;
+    font-size: 18px;
+    max-width: 300px;
+    background-color: rgb(194, 178, 178);
+    transition: transform 0.5s ease;
+}
+.marksForm {
+    margin: 10px;
+    display: inline-block;
+    width: auto;
+    margin-left: 50px;
+    max-width: 300px;
+    font-size: 18px;
+    background-color: rgb(194, 178, 178);
+    transition: transform 0.7s ease;
+}
+
+.scheduleForm {
+    margin-left: 50px;
+    display: inline-block;
+    width: auto;
+    max-width: 300px;
+    font-size: 18px;
+    background-color: rgb(194, 178, 178);
+    transition: transform 0.5s ease;
+}
+
+.overplay {
+    position: relative;
+    display: inline-block;
+}
+
+.overplay:hover .eventForm {
+    transform: scale(1.4);
+}
+.overplay:hover .marksForm{
+    transform: scale(1.4);
+}
+.overplay:hover .scheduleForm
+{
+    transform: scale(1.4);
+}
+
+body {
+    background-color: rgb(253, 253, 253);
+}
+
