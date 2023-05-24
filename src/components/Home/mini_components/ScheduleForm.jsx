@@ -1,16 +1,17 @@
+import { useNavigate } from "react-router-dom";
+
 
 const ScheduleForm = ({classes}) =>
 {
+
+    const navigate = useNavigate()
     const TravelTo = () =>
     {
-        window.location.href = "http://localhost:3000/schedule"
+        navigate("/schedule")
     }
     return (
-        <div className={classes.overplay}>
-            <div className={classes.scheduleForm} onClick={TravelTo}>
-                <p style={{cursor: 'default'}}>На вкладке "Расписание" вы можете ознакомится
-                 со школьным расписанием</p>
-            </div>
+        <div className={classes.form} onClick={TravelTo}>
+            <button className={classes.buttonInForm}>Расписание</button>
         </div>
     )
 }

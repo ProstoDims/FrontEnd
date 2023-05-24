@@ -1,10 +1,10 @@
-
+import classes from "../marks.module.css"
 
 const SubjectSelect = ({changeSubject}) =>
 {
     return(
         <div>
-            <select onChange={event => changeSubject(event.target.value)}>
+            <select onChange={event => changeSubject(event.target.value)} className={classes.classSelect} style={{marginTop: '5px'}} >
                 <option value=''>Выберите предмет</option>
                 <option value='Белорусский язык'>Белорусский язык</option>
                 <option value='Белорусская литература'>Белорусская литература</option>
@@ -19,8 +19,7 @@ const SubjectSelect = ({changeSubject}) =>
                 <option value='Биология'>Биология</option>
                 <option value='Химия'>Химия</option>
                 <option value='Астрономия'>Астрономия</option>
-                <option value='Физическая культура и здоровье'>Физическая культура и здоровье</option>
-                <option value='Черчение'>Черчение</option>
+                <option value='Физика'>Физика</option>
             </select>
         </div>
     )

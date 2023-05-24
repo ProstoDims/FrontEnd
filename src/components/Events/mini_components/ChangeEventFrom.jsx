@@ -12,8 +12,10 @@ const ChangeEventForm = ({event, change}) =>
 
     const changeEvent = () =>
     {
-        change(data)
-        setData({name: '', description: ''})
+        const photo = event.photo
+        const newData = {...data, photo}
+        change(newData)
+        setData({name: '', photo: '', description: ''})
     }
 
     return (

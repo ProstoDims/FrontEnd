@@ -6,7 +6,6 @@ import EventsService from "../services/EventsService";
 import Loader from "../UI/MyLoader/Loader";
 import Header from "../Header/Header"
 import classes from "./styles.module.css"
-import Footer from "../Footer/Footer";
 
 const Events = () =>
 {
@@ -49,20 +48,24 @@ const Events = () =>
     async function changeEvent(event)
     {
         const request = await EventsService.changeEvent(event)
-        if(request === 'OK')
-        {
-            getEvents()
-        }  
+        getEvents()
     }
 
     return (
         <div>
-            <Header /> 
-            {!isEventsLoading
-            ? <button className={classes.buttonAdd} onClick = {() => setModal(true)}>Добавить событие</button>
-            : <p/>
-            }       
+            <Header />       
             
+            {localStorage.getItem('ROLE') === 'admin'
+            ? <div>
+                {!isEventsLoading
+                ? <button className={classes.buttonAdd} onClick = {() => setModal(true)}>Добавить событие</button>
+                : <p/>
+                }
+               </div> 
+            :<div/>
+            }
+              
+
             <ModalWidnow visible={modal} setVisible={setModal}>
                 <AddNewForm create={createEvent}></AddNewForm>
             </ModalWidnow>
@@ -70,9 +73,7 @@ const Events = () =>
             {isEventsLoading
             ? <div style={{display: 'flex', justifyContent: 'center', marginTop: 50}}><Loader/></div>
             : <EventList change = {changeEvent} events = {events} remove = {removeEvent} ></EventList>
-            }   
-
-            <Footer />
+            } 
         </div>
     )
 }

@@ -8,7 +8,7 @@ const AddNew = ({setModal}) =>
     }
     return (
         <div className={classes.addNew} onClick={click}>
-            <p>+</p>
+            +
         </div>
     )
 }

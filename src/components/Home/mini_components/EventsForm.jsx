@@ -1,18 +1,19 @@
+import { useNavigate } from "react-router-dom";
 
-const EventsFrom = ({classes}) =>
+
+const EventForm = ({classes}) =>
 {
+
+    const navigate = useNavigate()
     const TravelTo = () =>
-    {
-        window.location.href = "http://localhost:3000/events"
+    {   
+        navigate("/events")
     }
     return (
-        <div className={classes.overplay}>
-            <div className={classes.eventForm} onClick={TravelTo}>
-            <p style={{cursor: 'default'}}>На вкладке "События" вы сможете ознакомится
-             со списком школьных событий</p>
-            </div>
+        <div className={classes.form} onClick={TravelTo}>
+            <button className={classes.buttonInForm}>События</button>
         </div>
     )
 }
 
-export default EventsFrom;
+export default EventForm;

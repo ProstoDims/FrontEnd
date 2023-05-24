@@ -3,16 +3,19 @@ import classes from "../styles.module.css"
 
 const AddNewForm = ({create}) =>
 {
-    const [data, setData] = useState({name: '', description: ''})
+    const [data, setData] = useState({name: '',photo: null, description: ''})
 
     const addNewEvet = (event) =>
     {
         event.preventDefault()
+
         const newEvent = {id: Date.now(), ...data}
+        console.log(newEvent)
         create(newEvent)
-        setData({name: '', description: ''})
+        setData({name: '', photo: null, description: ''})
 
     }
+
 
     return (
         <div>

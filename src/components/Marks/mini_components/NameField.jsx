@@ -4,7 +4,7 @@ const NameField = ({children}) =>
 {
     return(
         <div className={classes.nameField}>
-            <p>{children}</p>
+            {children}
         </div>
     )
 }

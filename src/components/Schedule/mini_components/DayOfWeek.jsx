@@ -5,10 +5,11 @@ const DayOfWeek = ({lessons, day}) =>
 {
     return (
         <div className={classes.day}>
-            <h2>{day}</h2>
+            <div className={classes.daysHeader}><p style={{marginLeft: '8px'}}>{day}</p></div>
+
             {lessons.length
             ? lessons.map((lesson, id) => <ListOfSubjects id ={id} lesson = {lesson} key ={id} />)
-            : <p style={{fontSize : "20px"}}>Расписание не было предоставленно</p>
+            : <div style={{fontSize : "22px"}}>Расписание не было предоставленно</div>
             }
            
         </div>

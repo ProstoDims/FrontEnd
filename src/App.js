@@ -4,17 +4,19 @@ import Events from "./components/Events/Events";
 import Schedule from "./components/Schedule/Schedule";
 import Home from "./components/Home/Home";
 import Marks from "./components/Marks/marks";
+import Help from "./components/Help/Help";
 
 function App() {
   return (
     <BrowserRouter>
         <div className="App">
           <Routes>
-            <Route path="/" element={<Authorization/>} />
-            <Route path="/home" element = {<Home />} />
-            <Route path="/events" element={<Events />} />
-            <Route path="/schedule" element={<Schedule />} />
-            <Route path="/marks" element = {<Marks />} />
+            <Route exact path="/" element={<Authorization/>} />
+            <Route exact path="/home" element = {<Home/>} />
+            <Route exact path="/events" element={<Events/>} />
+            <Route exact path="/schedule" element={<Schedule/>} />
+            <Route exact path="/marks" element = {<Marks/>} />
+            <Route exact path="/help" element = {<Help/>} />
           </Routes>
       </div>
     </BrowserRouter>

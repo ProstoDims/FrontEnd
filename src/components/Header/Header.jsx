@@ -1,26 +1,33 @@
+import { useNavigate } from "react-router-dom"
 import classes from "./Header.module.css"
 
 const Header = () =>
 {
-    const TravelTo = () =>
+    const navigate = useNavigate()
+    const TravelToHome = () =>
     {
-        window.location.href = "http://localhost:3000/home"
+        navigate("/home")
+    }
+    const TravelToHelp = () =>
+    {
+        navigate("/help")
     }
     const TravelToEvents = () =>
     {
-        window.location.href = "http://localhost:3000/events"
+        navigate("/events")
     }
     const TravelToMarks = () =>
     {
-        window.location.href = "http://localhost:3000/marks"
+        navigate("/marks")
     }
     const TravelToSchedule = () =>
     {
-        window.location.href = "http://localhost:3000/schedule"
+        navigate("/schedule")
     }
     return(
         <div className={classes.header}>
-            <button onClick={TravelTo} className={classes.textInHeader}>EduSchedule</button>
+            <button onClick={TravelToHome} className={classes.textInHeader}>EduSchedule</button>
+            <button onClick={TravelToHelp} className={classes.text}>Помощь</button>
             <button onClick={TravelToEvents} className={classes.text}>События</button>
             <button onClick={TravelToMarks} className={classes.text}>Отметки</button>
             <button onClick={TravelToSchedule} className={classes.text}>Расписание</button>

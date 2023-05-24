@@ -4,9 +4,19 @@ export default class MarkServices
 {
     static async getAll(value)
     {
-        console.log(value)
-        const id = value
-        const responce = await axios.get(`http://127.0.0.1:8000/eduschedule/api/v1/students/${id}}/`)
+        const responce = await axios.get(`http://maximzhak43.pythonanywhere.com/eduschedule/api/v1/students/${value}}/`, 
+        {headers: {Authorization: `Bearer ${localStorage.getItem('ACCESS')}`}})
+        .catch(error=>
+        {
+            if(localStorage.getItem('REFRESH') && error.response.status === 401)
+            {
+                axios.post('http://maximzhak43.pythonanywhere.com/token/refresh/', {refresh: localStorage.getItem('REFRESH')})
+                .then(responce => {
+                    localStorage.setItem('ACCESS', responce.data.access)
+                    this.getAll(value)
+                })
+            }
+        })
         return responce.data
     }
 }

@@ -1,18 +1,18 @@
+import { useNavigate } from "react-router-dom";
 
-const MarksFrom = ({classes}) =>
+
+const MarkForm = ({classes}) =>
 {
+    const navigate = useNavigate()
     const TravelTo = () =>
     {
-        window.location.href = "http://localhost:3000/marks"
+        navigate("/marks")
     }
     return (
-        <div className={classes.overplay}>
-            <div className={classes.marksForm} onClick={TravelTo}>
-                <p style={{cursor: 'default'}}>На вкладке "Отметки" вы можете ознакомится с успеваемостью
-                 учеников по разным дисциплинам</p>
-            </div>
+        <div className={classes.form} onClick={TravelTo}>
+            <button className={classes.buttonInForm}>Отметки</button>
         </div>
     )
 }
 
-export default MarksFrom;
+export default MarkForm;

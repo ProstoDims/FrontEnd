@@ -5,11 +5,15 @@ const MarkField = ({children, changeMark}) =>
 
     const change = () =>
     {
-        changeMark(children)
+        if(localStorage.getItem('ROLE') === 'teacher')
+        {
+            changeMark(children)    
+        }
+        
     }
     return (
         <div className={classes.markField} onClick={change}>
-            <p>{children.value}</p>
+            {children.value}
         </div>
     )
 }

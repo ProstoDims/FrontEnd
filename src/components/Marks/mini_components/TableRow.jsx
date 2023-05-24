@@ -7,7 +7,7 @@ import ChangeMark from "./ChangeMark"
 import AddNew from "./AddNew"
 import AddNewForm from "./AddNewForm"
 
-const TableRow = ({student, marks, change, addNew, subj}) =>
+const TableRow = ({student, marks, change, addNew, subj, deleteMark}) =>
 {
     const [visible, setVisible] = useState(false)
     const [modal, setModal] = useState(false)
@@ -20,20 +20,26 @@ const TableRow = ({student, marks, change, addNew, subj}) =>
     }
     const changeMark = (newMark) =>
     {
-        change(newMark)
+        const new_mark = {id: student.id, ...newMark}
+        change(new_mark)
         setVisible(false)
     }
     const addM = (mark) =>
     {
         setModal(false)
-        const newM = {id: student.id, ...mark, subject:subj}
-        addNew(newM)
+        const newMark = {id:student.id, value:mark.value, subject:mark.subject}
+        addNew(newMark)
+    }
+    const DeleteMark = (mark) =>
+    {
+        deleteMark(mark)
+        setVisible(false);
     }
 
     return (
         <div className={classes.tableRow}>
             <ModalWidnow visible={visible} setVisible={setVisible}>
-                <ChangeMark mark={mark} change={changeMark}/>
+                <ChangeMark mark={mark} change={changeMark} deleteMark={DeleteMark}/>
             </ModalWidnow>
 
             <NameField>{student.name}</NameField>
@@ -41,9 +47,12 @@ const TableRow = ({student, marks, change, addNew, subj}) =>
                 marks.map((mark, id) => <MarkField children={mark} key={id} changeMark={changeM}/>)
             }
 
-            <AddNew setModal={setModal}/>
+            {localStorage.getItem('ROLE') === 'teacher'
+            ?<AddNew setModal={setModal}/>
+            :<div/>
+            }
             <ModalWidnow visible={modal} setVisible={setModal}>
-                <AddNewForm addNew={addM}/>
+                <AddNewForm addNew={addM} subj={subj}/>
             </ModalWidnow>
         </div>
     )

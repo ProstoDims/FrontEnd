@@ -26,12 +26,10 @@ const Schedule = () =>
         <div>
             <Header/>
             <ClassSelect changeSchedule={ChangeOption}/>
-
             {visible
             ? <ListOfDays schedule={schedule}/>
-            : <p></p>
+            : <p></p>   
             }  
-
             <Footer />
         </div>
         

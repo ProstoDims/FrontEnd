@@ -2,12 +2,24 @@
     text-align: center;
 }
 
+.daysHeader {
+    text-align: left;
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    height: 35px;
+    font-size: 25px;
+    background-color: rgb(183, 219, 255);
+    border: 2px solid black;
+}
+
 .container {
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    margin-bottom: 10px;
-    border: 2px solid black;
+    border-bottom: 2px solid black;
+    border-left: 2px solid black;
+    border-right: 2px solid black;
+
 }
 
 .container:hover {
@@ -19,25 +31,26 @@
 }
 
 .time {
-    margin-left: 15px;
-    font-size: 20px;
+    margin-left: 10px;
+    font-size: 21px;
 }
 .time:hover {
     color: red;
 }
 
 .subject {
-    font-size: 20px;
+    font-size: 21px;
 }
 
 .classRoom {
-    font-size: 20px;
-    margin-right: 15px;
+    font-size: 21px;
+    margin-right: 10px;
 }
 
 .days {
     font-size: 16px;
     margin: 5px;
+    margin-top: 25px;
     width: 90%;
     height: auto;
 }
@@ -46,12 +59,12 @@
     display: inline-block;
     height: auto;
     width: 45%;
-    margin: 8px;
+    margin-top: 10px;
+    margin-left: 50px;
     font-size: 18px;
 }
 
 .classSelect {
-    
     appearance: none;
     -webkit-appearance: none;
     -moz-appearance: none;

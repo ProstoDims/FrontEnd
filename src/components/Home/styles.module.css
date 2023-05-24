@@ -1,51 +1,30 @@
 
-.eventForm {
-    margin: 10px;
+.form {
     display: inline-block;
-    width: auto;
-    font-size: 18px;
-    max-width: 300px;
-    background-color: rgb(194, 178, 178);
-    transition: transform 0.5s ease;
-}
-.marksForm {
-    margin: 10px;
-    display: inline-block;
-    width: auto;
-    margin-left: 50px;
-    max-width: 300px;
-    font-size: 18px;
-    background-color: rgb(194, 178, 178);
-    transition: transform 0.7s ease;
+    border: 2px solid black;
+    width: 300px;
+    height: 250px;
+    margin-top: 14%;
+    margin-left: 35px;
+    border-radius: 20px/10%;
+    transition: transform 0.3s ease-in-out;
 }
 
-.scheduleForm {
-    margin-left: 50px;
-    display: inline-block;
-    width: auto;
-    max-width: 300px;
-    font-size: 18px;
-    background-color: rgb(194, 178, 178);
-    transition: transform 0.5s ease;
+.form:hover {
+    transform: scale(1.2);
 }
-
-.overplay {
-    position: relative;
-    display: inline-block;
-}
-
-.overplay:hover .eventForm {
-    transform: scale(1.4);
-}
-.overplay:hover .marksForm{
-    transform: scale(1.4);
-}
-.overplay:hover .scheduleForm
-{
+.form:hover .buttonInForm {
+    color: rgb(18, 18, 247);
     transform: scale(1.4);
 }
 
-body {
-    background-color: rgb(253, 253, 253);
+.buttonInForm {
+    margin-top: 105px;
+    font-size: 25px;
+    background: none;
+    border: none;
+    transition: transform 0.25s ease-in-out;
 }
+
+
 
